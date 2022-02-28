@@ -8,12 +8,12 @@ public class Persona {
 	private String id;
 	private Cuenta[] cuenta;
 	public Persona(String nombre, String apellido, String profesion, int edad, String id) {
-		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.profesion = profesion;
 		this.edad = edad;
 		this.id = id;
+		cuenta= new Cuenta[7];
 	}
 	public String getNombre() {
 		return nombre;
