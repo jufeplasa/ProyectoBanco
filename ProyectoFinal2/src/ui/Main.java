@@ -34,6 +34,7 @@ public class Main {
 					System.out.println(solicitudCerrarBanco());
 					break;
 				case 4:
+					System.out.println(solicitudAbriCuenta());
 					break;
 				case 5:
 					break;
@@ -88,7 +89,25 @@ public class Main {
 		String mensaje="";
 		System.out.println("Introuce el nombre del banco a cerrar");
 		String nombreB=sc.next();
-		
+		mensaje=registrador.cerrarBanco(nombreB);
+		return mensaje;
+	}
+	
+	public static String solicitudAbriCuenta() {
+		String mensaje="";
+		System.out.println("Nombre del banco donde vas a abrir la cuenta");
+		String nombreB=sc.next();
+		System.out.println("Numero de cuenta");
+		String numC=sc.next();
+		System.out.println("Numero de identidad del propietario");
+		String idPropietario=sc.next();
+		System.out.println("Tipo de cuenta");
+		String tipoCuenta=sc.next();
+		System.out.println("Saldo inicial");
+		double saldoI=sc.nextDouble();
+		sc.nextLine();
+		System.out.println("Fecha de apertura: dd/mm/aa");
+		String fecha=sc.next();
 		return mensaje;
 	}
 }

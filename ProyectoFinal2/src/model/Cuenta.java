@@ -2,16 +2,15 @@ package model;
 
 public class Cuenta extends Banco {
 	public String numCuenta;
-	public int fecha;
-	private String idPropietario;
+	public String fecha;
+	private Persona propietario;
 	private String tipoCuenta;
 	private double saldo;
-	public Cuenta(String id, String nombre, double montoMax, double montoMin, double cobroT, double interesA,
-			String numCuenta, int fecha, String idPropietario, String tipoCuenta, double saldo) {
-		super(id, nombre, montoMax, montoMin, cobroT, interesA);
+	public Cuenta(Banco banco,String numCuenta, String fecha, Persona propietario, String tipoCuenta, double saldo) {
+		super(banco.getId(), banco.getNombre(), banco.getMontoMax(), banco.getMontoMin(), banco.getCobroT(), banco.getInteresA());
 		this.numCuenta = numCuenta;
 		this.fecha = fecha;
-		this.idPropietario = idPropietario;
+		this.propietario = propietario;
 		this.tipoCuenta = tipoCuenta;
 		this.saldo = saldo;
 	}
@@ -22,17 +21,12 @@ public class Cuenta extends Banco {
 	public void setNumCuenta(String numCuenta) {
 		this.numCuenta = numCuenta;
 	}
-	public int getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
-	public void setFecha(int fecha) {
-		this.fecha = fecha;
-	}
+	
 	public String getIdPropietario() {
-		return idPropietario;
-	}
-	public void setIdPropietario(String idPropietario) {
-		this.idPropietario = idPropietario;
+		return propietario.getId();
 	}
 	public String getTipoCuenta() {
 		return tipoCuenta;
