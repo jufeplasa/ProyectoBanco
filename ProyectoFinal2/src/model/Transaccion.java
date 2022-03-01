@@ -6,6 +6,7 @@ public class Transaccion {
 	public String destinatario;
 	public String fecha;
 	public String operador;
+	
 	public Transaccion(double transaccion, String tipoOperacion, String destinatario, String fecha, String operador) {
 		this.transaccion = transaccion;
 		this.tipoOperacion = tipoOperacion;
@@ -44,6 +45,7 @@ public class Transaccion {
 	public void setOperador(String operador) {
 		this.operador = operador;
 	}
+	
 	
 	
 }
