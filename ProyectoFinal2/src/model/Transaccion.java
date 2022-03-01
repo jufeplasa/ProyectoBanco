@@ -46,6 +46,13 @@ public class Transaccion {
 		this.operador = operador;
 	}
 	
+	public double calcularDeposito(Cuenta cuenta) {
+		double valor=cuenta.getCobroT();
+		return valor;
+	}
 	
-	
+	public double calcularRetiro(Cuenta cuenta) {
+		double valor=(transaccion*(cuenta.getInteresA()/100))+cuenta.getCobroT();
+		return valor;
+	}
 }

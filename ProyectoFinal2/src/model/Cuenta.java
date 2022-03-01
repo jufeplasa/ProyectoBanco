@@ -51,6 +51,11 @@ public class Cuenta extends Banco {
 		return year+" años";
 	}
 	
+	public double getSaldoPosRetiro(Transaccion nuevaOperacion) {
+		double saldoTotal=saldo-nuevaOperacion.calcularRetiro(this);
+		return saldoTotal;
+	}
+	
 	public Persona getPropietario() {
 		return propietario;
 	}
@@ -72,10 +77,12 @@ public class Cuenta extends Banco {
 		return saldo;
 	}
 	
-	public void actualizarSaldo() {
-		for(int i=0;i<operacion.size();i++) {
-			saldo+=operacion.get(i).getTransaccion();
-		}
+	public void actualizarSaldoDeposito(Transaccion operacionT) {
+		saldo+=operacionT.calcularDeposito(this);
+	}
+	
+	public void actualizarSaldoRetiro(Transaccion operacionT) {
+		saldo+=operacionT.calcularRetiro(this);
 	}
 	
 	public String toString() {

@@ -136,7 +136,7 @@ public class Main {
 			mensaje=registrador.realizarDeposito(monto, idCuenta, "deposito", fechaT, idOperario);
 		}
 		else {
-			mensaje="";
+			mensaje=registrador.realizarRetiro(monto, idCuenta, "retiro", fechaT, idOperario);
 		}
 		return mensaje;
 	}

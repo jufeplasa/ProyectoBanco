@@ -233,8 +233,51 @@ public class Registrador {
 					}
 					else {
 						tempCuenta.agregarOperacion(trasac);
-						tempCuenta.actualizarSaldo();
+						tempCuenta.actualizarSaldoDeposito(trasac);
 						mensaje="El deposito se realizon con gusto, tu nuevo saldo es: "+tempCuenta.getSaldo();
+					}
+				}
+				else {
+					mensaje="La fecha de trasaccion no es consistente.";
+				}
+			}
+			else {
+				mensaje="El propietario de la cuenta no concuerda con quien hace la trasaccion.";
+			}
+		}
+
+		else {
+			mensaje="La cuenta o el banco no existen.";
+		}
+		return mensaje;
+	}
+	
+	public String realizarRetiro(double monto, String idCuenta, String tipoT, String fecha, String idP) {
+		String mensaje="";
+		Persona tempPerson=buscarPersona(idP);
+		Cuenta tempCuenta=buscarCuenta(idCuenta);
+		Banco tempBank=buscarBanco(tempCuenta.getNombre());
+		Transaccion trasac= new Transaccion(-monto, idCuenta, tipoT,fecha, idP);
+		String [] fechaP=fecha.split("\\/");
+
+		if(tempBank!=null&&tempCuenta!=null) {
+			if(tempCuenta.getPropietario()==tempPerson) {
+				if(verificarFecha(tempCuenta.getFechaPartes(),fechaP)) {
+					if(monto>tempBank.getMontoMax()) {
+						mensaje="El monto que va a depositar excede el monto maximo.";
+					}
+					else if(monto<tempBank.getMontoMin()) {
+						mensaje="El monto que va a depositar no cumple con el saldo minimo";
+					}
+					else {
+						if(tempCuenta.getSaldoPosRetiro(trasac)<-100000) {
+							mensaje="No se puede retirar, porque quedaria con una deuda de 100.000$";
+						}
+						else {
+							tempCuenta.agregarOperacion(trasac);
+							tempCuenta.actualizarSaldoRetiro(trasac);
+							mensaje="El deposito se realizon con gusto, tu nuevo saldo es: "+tempCuenta.getSaldo();
+						}
 					}
 				}
 				else {
