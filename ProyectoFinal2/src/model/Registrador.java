@@ -72,7 +72,7 @@ public class Registrador {
 			boolean cuentas=false;
 			for(int i=0;i<cuenta.size()&&!cuentas;i++) {
 				if(cuenta.get(i).getNombre().equalsIgnoreCase(bankName)) {
-					cuentas=false;
+					cuentas=true;
 				}
 			}
 			if(!cuentas) {
