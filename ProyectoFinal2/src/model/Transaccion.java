@@ -1,5 +1,11 @@
 package model;
 
+/*
+* comentario Juan Camilo
+* el mejor comentario del mundo
+* funcionalidad # 2
+* LAUDETUR IESUS CHRISTUS
+* */
 public class Transaccion {
 	public double transaccion;
 	public String tipoOperacion;
