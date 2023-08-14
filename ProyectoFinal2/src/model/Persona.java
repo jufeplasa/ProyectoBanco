@@ -18,6 +18,16 @@ public class Persona {
 		this.id = id;
 		cuenta= new ArrayList<Cuenta>();
 	}
+	public void ThreePointFunctionality(){
+		int a,b,c,d :  2,5,6,7;
+		count : 
+
+		for (i=0,i=count,i++){
+
+		}
+
+
+	}
 	
 	public boolean tieneCuentaAhorro() {
 		boolean tiene=false;
