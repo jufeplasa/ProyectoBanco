@@ -8,7 +8,7 @@ public class Banco {
 	public double cobroT;
 	public double interesA;
 	
-	//Clase que almacena datos del objeto "banco" para su manejo y ejecucion
+	//Clase que almacena datos del objeto "banco"
 	public Banco(String id, String nombre, double montoMax, double montoMin, double cobroT, double interesA) {
 		this.id = id;
 		this.nombre = nombre;
