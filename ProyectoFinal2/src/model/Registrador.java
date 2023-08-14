@@ -13,7 +13,16 @@ public class Registrador {
 		banco=new ArrayList<Banco>();
 		cuenta=new ArrayList<Cuenta>();
 	}
-
+	
+	/**
+	 * Metodo para agregar persona
+	 * @param nombre
+	 * @param apellido
+	 * @param profesion
+	 * @param edad
+	 * @param id
+	 * @return un mensaje que indica si la persona se agrego de forma correcta o ya existe.
+	 */
 	public String agregarPersona(String nombre, String apellido, String profesion, int edad, String id) {
 		Persona auxPersona=new Persona(nombre, apellido,profesion,edad,id);
 		String mensaje="";
@@ -38,6 +47,16 @@ public class Registrador {
 		return mensaje;
 	}
 
+	/**
+	 * Meotdo para crear un banco donde recibe una serie de parametros
+	 * @param id
+	 * @param nombre
+	 * @param montoMax
+	 * @param montoMin
+	 * @param cobroT
+	 * @param interesA
+	 * @return un mensaje que indica al usuario si logro crear el banco.
+	 */
 	public String abrirBanco(String id, String nombre, double montoMax, double montoMin, double cobroT, double interesA) {
 		String mensaje="";
 		Banco auxBanco= new Banco(id,nombre,montoMax,montoMin,cobroT,interesA);
@@ -85,7 +104,13 @@ public class Registrador {
 		}
 		return mensaje;
 	}
-
+	
+	
+	/**
+	 * Metodo que busca un banco por medio de su nombre 
+	 * @param bankName
+	 * @return
+	 */
 	public Banco buscarBanco(String bankName) {
 		Banco auxBank=null;
 		boolean find=false;
