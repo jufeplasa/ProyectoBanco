@@ -3,6 +3,11 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Comentario Julian
+ * La clase Cuenta representa una cuenta con atributos basicos como aÃ±a actual, numero de cuenta
+ * fecha, propietario, tipo de cuenta y saldo.
+ */
 public class Cuenta extends Banco {
 	
 	public int CURRENTYEAR;
@@ -48,7 +53,7 @@ public class Cuenta extends Banco {
 	
 	public String getFechaA() {
 		int year=CURRENTYEAR-getYear();
-		return year+" años";
+		return year+" aï¿½os";
 	}
 	
 	public double getSaldoPosRetiro(Transaccion nuevaOperacion) {
@@ -86,7 +91,7 @@ public class Cuenta extends Banco {
 	}
 	
 	public String toString() {
-		return "La cuenta "+numCuenta+" Con saldo "+saldo+"$ hace "+getFechaA()+" años\n";
+		return "La cuenta "+numCuenta+" Con saldo "+saldo+"$ hace "+getFechaA()+" aï¿½os\n";
 	}
 
 }
